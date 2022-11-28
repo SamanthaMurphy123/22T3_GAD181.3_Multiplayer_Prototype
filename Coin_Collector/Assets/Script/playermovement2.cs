@@ -8,6 +8,7 @@ public class playermovement2 : MonoBehaviour
     private float speed;
     private Rigidbody2D body;
     private float MovementX;
+    private float dirX, dirY, moveSpeed;
 
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -25,23 +26,35 @@ public class playermovement2 : MonoBehaviour
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         body.velocity = new Vector2(MovementX * speed, body.velocity.y);
 
-
-        if (Input.GetKey(KeyCode.J)) 
-            {
-            MovementX = -1;
-            }
-
-        if (Input.GetKey(KeyCode.L)) 
-            {
-            MovementX = -1;
-            }
-        if ((Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))) 
+        if (Input.GetKey(KeyCode.L))
         {
-            MovementX = 0;
+            transform.position += Vector3.right * speed * Time.deltaTime;
         }
-
+        if (Input.GetKey(KeyCode.J))
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
 
         if (Input.GetKey(KeyCode.RightShift) && isTouchingGround)
             body.velocity = new Vector2(body.velocity.x, speed);
+
+
+        // if (Input.GetKey(KeyCode.J))
+        //  {
+        //      MovementX = -1;
+        //      dirX = -moveSpeed;
+        //  }
+
+        //  if (Input.GetKey(KeyCode.L))
+        //   {
+        //      MovementX = -1;
+        //      dirX = moveSpeed;
+        //   }
+
+        //  if ((Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L)))
+        //  {
+        //      MovementX = 0;
+        //   }
+
     }
 }
