@@ -15,6 +15,8 @@ public class playermovement2 : MonoBehaviour
     public LayerMask groundLayer;
     private bool isTouchingGround;
 
+    public static int numberOfCoin;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
