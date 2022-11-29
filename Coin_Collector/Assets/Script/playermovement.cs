@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class playermovement : MonoBehaviour
     private bool isTouchingGround;
 
     public static int numberOfCoin;
+
+    public static Action<string> PlayerCollectsCoin = delegate { };
 
     private void Awake()
     {
@@ -35,5 +38,14 @@ public class playermovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && isTouchingGround)
             body.velocity = new Vector2(body.velocity.x, speed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Coin>())
+        {
+            PlayerCollectsCoin(name);
+            Destroy(collision.gameObject);
+        }
     }
 }

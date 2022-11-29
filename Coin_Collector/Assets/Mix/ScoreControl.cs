@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ScoreControl : MonoBehaviour
 {
     [SerializeField]
-    private Text scoreCounterPlayerOne, scoreCounterPlayerTwo;
+    private TextMeshProUGUI scoreCounterPlayerOne, scoreCounterPlayerTwo;
 
     private int playerOneScore, playerTwoScore;
 
