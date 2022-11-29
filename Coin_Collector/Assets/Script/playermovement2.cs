@@ -47,12 +47,5 @@ public class playermovement2 : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Coin>())
-        {
-            PlayerCollectsCoin(name);
-            Destroy(collision.gameObject);
-        }
-    }
+    
 }

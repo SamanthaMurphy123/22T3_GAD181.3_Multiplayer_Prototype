@@ -40,12 +40,6 @@ public class playermovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, speed);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Coin>())
-        {
-            PlayerCollectsCoin(name);
-            Destroy(collision.gameObject);
-        }
-    }
+    
+    
 }
