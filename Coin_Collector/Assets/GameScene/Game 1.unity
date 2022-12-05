@@ -472,7 +472,7 @@ Camera:
   far clip plane: 10000
   field of view: 64
   orthographic: 1
-  orthographic size: 10.27
+  orthographic size: 9
   m_Depth: -3
   m_CullingMask:
     serializedVersion: 2
@@ -496,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93200726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.48, y: 5.72, z: -8.92}
+  m_LocalPosition: {x: 4.48, y: 4.96, z: -8.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 206547507}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Player
+  m_TagString: player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5141,7 +5141,7 @@ GameObject:
   - component: {fileID: 225935299}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Player
+  m_TagString: player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5550,7 +5550,6 @@ GameObject:
   - component: {fileID: 335011820}
   - component: {fileID: 335011819}
   - component: {fileID: 335011818}
-  - component: {fileID: 335011822}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5643,24 +5642,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &335011822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335011817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d41e78b1d4788a448bb6539a1609fee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 225935293}
-  player2: {fileID: 206547500}
-  ScorePlayer1: 0
-  ScorePlayer2: 0
-  player1win: {fileID: 276127757}
-  player2win: {fileID: 660158055}
 --- !u!1001 &340432320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7398,7 +7379,7 @@ RectTransform:
   m_GameObject: {fileID: 573778895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2112103619}
@@ -7409,7 +7390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 559, y: 296}
+  m_AnchoredPosition: {x: 550, y: 310}
   m_SizeDelta: {x: 520, y: 133.4021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573778897
@@ -10254,7 +10235,7 @@ RectTransform:
   m_GameObject: {fileID: 1719303485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2003348554}
@@ -10265,7 +10246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -535, y: 297}
+  m_AnchoredPosition: {x: -550, y: 310}
   m_SizeDelta: {x: 520, y: 133.4021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719303487
@@ -12997,7 +12978,7 @@ GameObject:
   - component: {fileID: 2003348555}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ScorePlayer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13763,7 +13744,7 @@ GameObject:
   - component: {fileID: 2112103620}
   m_Layer: 5
   m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_TagString: ScorePlayer2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
