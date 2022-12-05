@@ -45,7 +45,7 @@ public class playermovement2 : MonoBehaviour
 
 
     }
-
-
     
+
+
 }
