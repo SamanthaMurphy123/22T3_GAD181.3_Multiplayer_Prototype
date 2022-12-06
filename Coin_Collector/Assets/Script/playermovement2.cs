@@ -40,7 +40,7 @@ public class playermovement2 : MonoBehaviour
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.RightShift) && isTouchingGround)
+        if (Input.GetKey(KeyCode.I) && isTouchingGround)
             body.velocity = new Vector2(body.velocity.x, speed);
 
 

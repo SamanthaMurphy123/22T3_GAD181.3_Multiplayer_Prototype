@@ -36,7 +36,7 @@ public class playermovement : MonoBehaviour
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
 
-        if (Input.GetKey(KeyCode.Space) && isTouchingGround)
+        if (Input.GetKey(KeyCode.W) && isTouchingGround)
             body.velocity = new Vector2(body.velocity.x, speed);
     }
 
