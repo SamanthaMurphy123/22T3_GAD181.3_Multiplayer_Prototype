@@ -43,12 +43,4 @@ public class CoinPiker : MonoBehaviour
         
     }
 
-    //public void WinCondition()
-    //{
-    //    if ()
-    //    {
-
-    //    }
-
-    //}
 }
