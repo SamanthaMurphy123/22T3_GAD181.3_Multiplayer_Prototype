@@ -24,6 +24,8 @@ public class CoinSpawner : MonoBehaviour
 
     [SerializeField] CoinPiker coins;
 
+    
+
 
     void Start()
     {
@@ -78,14 +80,19 @@ public class CoinSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (coins.Coin1 > coins.Coin2)
+        if (coins.Coin1 + coins.Coin2 == coinCount)
         {
-            SceneManager.LoadScene("WinScreen");
+           
+            if (coins.Coin1 < coins.Coin2)
+            {
+                SceneManager.LoadScene("WinScreen2");
+            }
+            else if (coins.Coin1 > coins.Coin2)
+            {
+                SceneManager.LoadScene("WinScreen");
+            }
         }
-        else if (coins.Coin1 < coins.Coin2)
-        {
-            SceneManager.LoadScene("WinScreen2");
-        }
+       
         
     }
 }
