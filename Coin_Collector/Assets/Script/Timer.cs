@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class Timer : MonoBehaviour
 {
     [SerializeField] private Image uiFill;
-    [SerializeField] private TextMeshPro uiText;
+    [SerializeField] private TextMeshProUGUI uiText;
 
     public int Duration;
 
