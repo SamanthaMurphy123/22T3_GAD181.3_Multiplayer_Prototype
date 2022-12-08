@@ -45,7 +45,18 @@ public class playermovement2 : MonoBehaviour
 
 
     }
-    
 
+    // A bool value indicating whether the player has collected a coin
+    bool hasCollectedCoin = false;
 
+    // Other code for the Player class goes here...
+
+    public bool HasCollectedCoin()
+    {
+        // Return the hasCollectedCoin flag
+        return hasCollectedCoin;
+    }
 }
+
+
+

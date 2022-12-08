@@ -78,22 +78,6 @@ public class CoinSpawner : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if (coins.Coin1 + coins.Coin2 == coinCount)
-        {
-           
-            if (coins.Coin1 < coins.Coin2)
-            {
-                SceneManager.LoadScene("WinScreen2");
-            }
-            else if (coins.Coin1 > coins.Coin2)
-            {
-                SceneManager.LoadScene("WinScreen");
-            }
-        }
-       
-        
-    }
+   
 }
 

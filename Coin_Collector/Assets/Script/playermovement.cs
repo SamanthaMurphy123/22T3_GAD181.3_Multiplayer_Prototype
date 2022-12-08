@@ -39,9 +39,20 @@ public class playermovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && isTouchingGround)
             body.velocity = new Vector2(body.velocity.x, speed);
     }
+    // A bool value indicating whether the player has collected a coin
+    bool hasCollectedCoin = false;
 
+    // Other code for the Player class goes here...
+
+    public bool HasCollectedCoin()
+    {
+        // Return the hasCollectedCoin flag
+        return hasCollectedCoin;
+    }
     
 
-
-
 }
+
+
+
+
