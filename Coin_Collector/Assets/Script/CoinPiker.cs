@@ -90,7 +90,7 @@ public class CoinPiker : MonoBehaviour
             }
 
             // Play the coin sound effect
-            AudioSource.PlayClipAtPoint(coinSound, transform.position, 1);
+            AudioSource.PlayClipAtPoint(coinSound, transform.position, 4);
 
             // Destroy the coin GameObject
             Destroy(other.gameObject);
