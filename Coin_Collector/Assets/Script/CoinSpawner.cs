@@ -22,17 +22,27 @@ public class CoinSpawner : MonoBehaviour
 
     public float minSpacing = 0.5f;
 
+    public float timeBetweenCoins = 5.0f;
+
     [SerializeField] CoinPiker coins;
 
-    
+
 
 
     void Start()
     {
-        coins = GetComponent<CoinPiker>();
-        // Spawn the specified number of coins
-        for (int i = 0; i < coinCount; i++)
+        // Start a coroutine that waits for the specified amount of time
+        // before spawning each coin
+        StartCoroutine(SpawnCoins());
+    }
+
+    IEnumerator SpawnCoins()
+    {
+        while (true)
         {
+            // Wait for the specified amount of time before spawning the next coin
+            yield return new WaitForSeconds(timeBetweenCoins);
+
             // Keep trying to spawn a coin until we find a valid location
             while (true)
             {
@@ -78,6 +88,6 @@ public class CoinSpawner : MonoBehaviour
         }
     }
 
-   
+
 }
 
