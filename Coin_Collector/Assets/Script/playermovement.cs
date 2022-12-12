@@ -8,11 +8,15 @@ public class playermovement : MonoBehaviour
     [SerializeField]
     private float speed;
     private Rigidbody2D body;
+    private float MovementX;
+    private float dirX, dirY, moveSpeed;
+    private Vector3 currentScale;
 
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
+
 
     public static int numberOfCoin;
 
@@ -21,24 +25,41 @@ public class playermovement : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        MovementX = 0;
+
+        currentScale = transform.localScale;
     }
 
     private void Update()
     {
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        float horizontalInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        body.velocity = new Vector2(MovementX * speed, body.velocity.y);
 
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += Vector3.right * speed * Time.deltaTime;
 
-        // flip
-        if (horizontalInput > 0.01f)
-            transform.localScale = Vector3.one;
-        else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-1, 1, 1);
+            currentScale.x = Mathf.Abs(currentScale.x);
+            transform.localScale = currentScale;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+            currentScale.x = -Mathf.Abs(currentScale.x);
+            transform.localScale = currentScale;
+        }
 
         if (Input.GetKey(KeyCode.W) && isTouchingGround)
             body.velocity = new Vector2(body.velocity.x, speed);
+
+
+
+
+
+
+
     }
+
     // A bool value indicating whether the player has collected a coin
     bool hasCollectedCoin = false;
 
@@ -49,8 +70,6 @@ public class playermovement : MonoBehaviour
         // Return the hasCollectedCoin flag
         return hasCollectedCoin;
     }
-    
-
 }
 
 

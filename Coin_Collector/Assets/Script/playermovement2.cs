@@ -10,11 +10,13 @@ public class playermovement2 : MonoBehaviour
     private Rigidbody2D body;
     private float MovementX;
     private float dirX, dirY, moveSpeed;
+    private Vector3 currentScale;
 
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
+
 
     public static int numberOfCoin;
 
@@ -24,6 +26,8 @@ public class playermovement2 : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         MovementX = 0;
+
+        currentScale = transform.localScale;
     }
 
     private void Update()
@@ -34,14 +38,24 @@ public class playermovement2 : MonoBehaviour
         if (Input.GetKey(KeyCode.L))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+
+            currentScale.x = Mathf.Abs(currentScale.x);
+            transform.localScale = currentScale;
         }
         if (Input.GetKey(KeyCode.J))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            currentScale.x = -Mathf.Abs(currentScale.x);
+            transform.localScale = currentScale;
         }
 
         if (Input.GetKey(KeyCode.I) && isTouchingGround)
             body.velocity = new Vector2(body.velocity.x, speed);
+
+
+       
+
+
 
 
     }
