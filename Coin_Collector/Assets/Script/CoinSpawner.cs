@@ -31,8 +31,6 @@ public class CoinSpawner : MonoBehaviour
 
     void Start()
     {
-        // Start a coroutine that waits for the specified amount of time
-        // before spawning each coin
         StartCoroutine(SpawnCoins());
     }
 
